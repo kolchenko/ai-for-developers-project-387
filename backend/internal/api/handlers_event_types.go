@@ -95,21 +95,21 @@ func validateEventType(
 	availableFrom, availableTo string,
 ) (domain.EventType, string) {
 	if name == "" {
-		return domain.EventType{}, "name обязателен"
+		return domain.EventType{}, "Название обязательно"
 	}
 	if description == "" {
-		return domain.EventType{}, "description обязательна"
+		return domain.EventType{}, "Описание обязательно"
 	}
 	if !domain.IsValidDuration(durationMinutes) {
-		return domain.EventType{}, "durationMinutes должен быть одним из: 15, 30, 45, 60"
+		return domain.EventType{}, "Продолжительность события должна быть 15, 30, 45 или 60 минут"
 	}
 	from, errFrom := domain.ParseTimeOfDay(availableFrom)
 	to, errTo := domain.ParseTimeOfDay(availableTo)
 	if errFrom != nil || errTo != nil {
-		return domain.EventType{}, "availableFrom и availableTo должны быть в формате HH:mm:ss"
+		return domain.EventType{}, "Начало и конец окна должны быть в формате HH:mm:ss"
 	}
 	if !(from < to) {
-		return domain.EventType{}, "availableFrom должен быть раньше availableTo"
+		return domain.EventType{}, "Начало окна должно быть раньше его конца"
 	}
 	return domain.EventType{
 		Name:            name,
