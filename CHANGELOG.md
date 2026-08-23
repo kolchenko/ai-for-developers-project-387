@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0 (2026-08-23)
+
+
+### Features
+
+* add manual opencode task workflow ([c86fa21](https://github.com/kolchenko/ai-for-developers-project-387/commit/c86fa21d28a0c1d87f4a3c82c477472016dcbac2))
+* add weekly code audit workflow ([eca8cae](https://github.com/kolchenko/ai-for-developers-project-387/commit/eca8caeba1ed5f87ad0fb409d25e9615130480c4))
+
 ## 1.0.0 (2026-08-22)
 
 
